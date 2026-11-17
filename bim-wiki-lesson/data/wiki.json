@@ -1,0 +1,238 @@
+{
+  "title": "從圖說到 BIM 模型：設備建模前的五道檢查",
+  "audience": "第一次接觸 Revit／BIM 的學習者",
+  "method": "先檢查原始來源，再由 AI 依來源筆記整理教學 wiki；每章都標註 sourceIds",
+  "generated": "2026-11-17",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Revit Families",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Model/files/GUID-4EBB97AD-C7B6-4828-91EB-BC0E99B81E43.htm",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "limits": "本頁概述概念，不提供特定設備的尺寸或可直接套用的族群範本。"
+    },
+    {
+      "id": "S02",
+      "title": "About Family Templates",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-E36987A9-A68F-4121-A391-907306BAA60A.htm",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "limits": "樣板選擇仍須考慮專案規範及具體族群需求。"
+    },
+    {
+      "id": "S03",
+      "title": "Create a Family from a Template",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-228D213B-9497-48A6-AAE1-4E54F7834931.htm",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "limits": "教學操作以 Revit 2023 英文官方說明為來源，中文介面文字可能有所不同。"
+    },
+    {
+      "id": "S04",
+      "title": "Create Family Parameters",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-921F7A15-D191-4F75-8243-4989C482E253.htm",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "limits": "未查證此文件存在直接設定任意長度參數最小值與最大值的標準欄位，不作此宣稱。"
+    },
+    {
+      "id": "S05",
+      "title": "About Categories for MEP Families",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-48B14613-5BFC-4E4D-B1DF-80B85EC8DFF3.htm",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "limits": "不能把所有 MEP 元件一律當成通用模型，也不能假定每一種族群都有同樣的參數。"
+    },
+    {
+      "id": "S06",
+      "title": "About Connectors in Families",
+      "url": "https://help.autodesk.com/cloudhelp/2024/ENU/Revit-Customize/files/GUID-3181AA1C-7D3E-4D2F-8E06-ED74E6EEEFF5.htm",
+      "version": "Revit 2024（跨版本概念參考）",
+      "kind": "Autodesk 官方說明",
+      "limits": "此來源版本為 Revit 2024，這裡只採用概念；在 Revit 2023 操作前須核對對應版本功能。未經圖面確認時不建議把假設接口當正式資料。"
+    },
+    {
+      "id": "S07",
+      "title": "Interference Checking",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Collaborate/files/GUID-890A9FE0-EFF4-4CFB-9E81-B0DE1A132BEC.htm",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "limits": "簡化外框的交疊檢查不能代表細部配管、檢修空間與真實施工條件都已通過。"
+    },
+    {
+      "id": "S08",
+      "title": "BIM Atlas｜只有長寬高，能先建立設備模型嗎？",
+      "url": "https://github.com/anita615715-cmd/bimflow-vibe-coding/blob/main/bim-atlas/data/articles.json",
+      "version": "原創教學案例（2026-11）",
+      "kind": "使用者專案既有內容",
+      "limits": "全部數值是課堂模擬案例，不是任何真實設備的核定尺寸。"
+    },
+    {
+      "id": "S09",
+      "title": "BIM Atlas｜型錄 2630 mm，配置圖 2680 mm，怎麼辦？",
+      "url": "https://github.com/anita615715-cmd/bimflow-vibe-coding/blob/main/bim-atlas/data/articles.json",
+      "version": "原創教學案例（2026-11）",
+      "kind": "使用者專案既有內容",
+      "limits": "此案例為模擬資料，並不代表實際設備規格或真正的 RFI 結案結果。"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "W01",
+      "slug": "what-is-bim-family",
+      "title": "從 3D 物件到 BIM 族群",
+      "lead": "設備的 3D 外形只是其中一部分；在 BIM 中，族群還包含參數與行為。",
+      "points": [
+        "Revit 族群組織相似元件的參數與圖形表現。",
+        "可載入族群可在外部 RFA 建立並匯入模型。",
+        "機電設備除幾何外，還可能需要正確的類別與連接器。"
+      ],
+      "example": "初學者不要只問「畫成什麼形狀」，還要問「這個模型要支援哪種任務」。",
+      "check": [
+        "先定義交付用途：空間配置、資訊明細、系統連接或詳細協調。",
+        "區分已確認資料與尚未取得的資料。"
+      ],
+      "sourceIds": [
+        "S01",
+        "S08"
+      ]
+    },
+    {
+      "id": "W02",
+      "slug": "template-and-category",
+      "title": "第一關：樣板與類別",
+      "lead": "樣板決定起點，族群類別影響參數與行為，兩者都應根據元件用途選擇。",
+      "points": [
+        "宿主型樣板依賴牆、樓板、天花板或屋頂等宿主。",
+        "機電族群的類別會啟用不同參數與部件行為。",
+        "新建族群時要用有意義的名稱儲存，且測試完成後再發布給其他人使用。"
+      ],
+      "example": "要做需要系統連接的設備時，不能只憑外觀就選擇通用模型，應先確認交付需求。",
+      "check": [
+        "確認元件是否需要宿主。",
+        "確認需用的族群類別與專案標準。",
+        "先在測試環境確認行為再發佈。"
+      ],
+      "sourceIds": [
+        "S02",
+        "S03",
+        "S05"
+      ]
+    },
+    {
+      "id": "W03",
+      "slug": "type-instance-parameters",
+      "title": "第二關：參數要怎麼設計？",
+      "lead": "參數不只是一個欄位，還決定同類型與各個放置實例的資訊如何變動。",
+      "points": [
+        "類型（Type）參數適用於共用相同規格的元件類型。",
+        "實體（Instance）參數可讓各個放置實例個別設定。",
+        "參數應先明確定義名稱、用途與單位，不要以模糊的欄位承載不同意思。"
+      ],
+      "example": "同型號設備共享的型錄外形可以考慮類型層級；每個設備的備註或實際放置資訊則可能要個別管理。這是設計建議，需視交付目的決定。",
+      "check": [
+        "列出所有欄位與資料來源。",
+        "區分類型／實體參數。",
+        "設定後測試修改是否影響預期範圍。"
+      ],
+      "sourceIds": [
+        "S04",
+        "S01"
+      ]
+    },
+    {
+      "id": "W04",
+      "slug": "mep-connectors",
+      "title": "第三關：MEP 連接器不是裝飾",
+      "lead": "連接器與風管、管線、電氣系統的接合有關，不應在未知接口時隨意指定位置。",
+      "points": [
+        "連接器是讓 MEP 族群與系統互動的元素。",
+        "官方列出面放置與工作平面放置的做法，位置及方向會影響連接。",
+        "未取得可信接口資料時，先列出待確認項目，不把猜測作為正式模型連接器。"
+      ],
+      "example": "只有空壓機外形長寬高，卻不知道出口方向與管徑時，可以先做用途明確的簡化外框；不能因此宣稱 MEP 連接完成。",
+      "check": [
+        "確認出口數量、尺寸、位置、標高與方向。",
+        "依 Revit 版本核對連接器操作方式。",
+        "區分規格未取得與正式核定資訊。"
+      ],
+      "sourceIds": [
+        "S05",
+        "S06",
+        "S08"
+      ]
+    },
+    {
+      "id": "W05",
+      "slug": "interference-check",
+      "title": "第四關：碰撞檢查能證明什麼？",
+      "lead": "干涉檢查可發現幾何交疊，但檢查範圍與模型精度會決定它能說明什麼。",
+      "points": [
+        "Revit 的 Interference Check 可找出部分類別與模型元素之間的交疊。",
+        "報告可作為設計協調、修正與追蹤的依據。",
+        "工具存在範圍限制，簡化外框通過檢查不代表細部施工可行。"
+      ],
+      "example": "兩台設備外框未重疊，只能初步排除外框交疊；檢修門打開或吊裝動線的需求仍需額外確認。",
+      "check": [
+        "先定義這次檢查的模型與類別。",
+        "記錄發現的交疊和處置狀態。",
+        "核對工具未涵蓋的構件類型與實際施工限制。"
+      ],
+      "sourceIds": [
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "id": "W06",
+      "slug": "drawing-conflict",
+      "title": "第五關：圖說尺寸互相矛盾",
+      "lead": "當不同文件對同一設備給出不同尺寸，第一件事不是猜哪個比較正確，而是追查來源。",
+      "points": [
+        "範例中型錄長 2630 mm，配置圖長 2680 mm，相差 50 mm。",
+        "要先核對來源文件版次、發行日期與尺寸量測基準。",
+        "暫時包絡的設計決策不能冒充正式核定尺寸。"
+      ],
+      "example": "可以把這次衝突整理成：兩個來源、兩個數值、50 mm 差異、待確認的責任單位與所需回覆。",
+      "check": [
+        "整理文件名稱與版本。",
+        "記錄矛盾和差異數值。",
+        "待核定後更新模型並保留紀錄。"
+      ],
+      "sourceIds": [
+        "S09",
+        "S03",
+        "S07"
+      ]
+    },
+    {
+      "id": "W07",
+      "slug": "precheck-workflow",
+      "title": "把五道關卡串成檢核流程",
+      "lead": "教學重點不是記住所有按鈕，而是知道何時檢查、缺什麼、能做到哪一步。",
+      "points": [
+        "先確定模型目的，再選樣板與族群類別。",
+        "先核對來源與參數單位，再決定是否可建立簡化外框。",
+        "接口資訊取得後才規劃正式連接器；對碰撞結果也要註明適用範圍。",
+        "有衝突時先回到來源確認，完成後才繼續建模並記錄。"
+      ],
+      "example": "遇到「型錄和配置圖長度不同」時，應先比對版本與量測基準，不是直接重建所有模型。",
+      "check": [
+        "用途／樣板／類別是否確認？",
+        "尺寸／單位／參數來源是否可追溯？",
+        "接口與檢查範圍是否合理？",
+        "衝突是否有追蹤與回覆？"
+      ],
+      "sourceIds": [
+        "S01",
+        "S02",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S09"
+      ]
+    }
+  ]
+}
