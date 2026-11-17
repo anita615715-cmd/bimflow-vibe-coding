@@ -1,0 +1,89 @@
+{
+  "title": "BIM 設備建模前置檢核｜LLM Wiki 原始資料",
+  "date": "2026-11-17",
+  "scope": "教學示例；以 Autodesk 官方說明為主，搭配既有 BIM Atlas 模擬案例",
+  "ingestCount": 9,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Revit Families",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Model/files/GUID-4EBB97AD-C7B6-4828-91EB-BC0E99B81E43.htm",
+      "locator": null,
+      "rawPath": "raw/S01.md"
+    },
+    {
+      "id": "S02",
+      "title": "About Family Templates",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-E36987A9-A68F-4121-A391-907306BAA60A.htm",
+      "locator": null,
+      "rawPath": "raw/S02.md"
+    },
+    {
+      "id": "S03",
+      "title": "Create a Family from a Template",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-228D213B-9497-48A6-AAE1-4E54F7834931.htm",
+      "locator": null,
+      "rawPath": "raw/S03.md"
+    },
+    {
+      "id": "S04",
+      "title": "Create Family Parameters",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-921F7A15-D191-4F75-8243-4989C482E253.htm",
+      "locator": null,
+      "rawPath": "raw/S04.md"
+    },
+    {
+      "id": "S05",
+      "title": "About Categories for MEP Families",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Customize/files/GUID-48B14613-5BFC-4E4D-B1DF-80B85EC8DFF3.htm",
+      "locator": null,
+      "rawPath": "raw/S05.md"
+    },
+    {
+      "id": "S06",
+      "title": "About Connectors in Families",
+      "version": "Revit 2024（跨版本概念參考）",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2024/ENU/Revit-Customize/files/GUID-3181AA1C-7D3E-4D2F-8E06-ED74E6EEEFF5.htm",
+      "locator": null,
+      "rawPath": "raw/S06.md"
+    },
+    {
+      "id": "S07",
+      "title": "Interference Checking",
+      "version": "Revit 2023",
+      "kind": "Autodesk 官方說明",
+      "url": "https://help.autodesk.com/cloudhelp/2023/ENU/Revit-Collaborate/files/GUID-890A9FE0-EFF4-4CFB-9E81-B0DE1A132BEC.htm",
+      "locator": null,
+      "rawPath": "raw/S07.md"
+    },
+    {
+      "id": "S08",
+      "title": "BIM Atlas｜只有長寬高，能先建立設備模型嗎？",
+      "version": "原創教學案例（2026-11）",
+      "kind": "使用者專案既有內容",
+      "url": "https://github.com/anita615715-cmd/bimflow-vibe-coding/blob/main/bim-atlas/data/articles.json",
+      "locator": "article.id=equipment-envelope",
+      "rawPath": "raw/S08.md"
+    },
+    {
+      "id": "S09",
+      "title": "BIM Atlas｜型錄 2630 mm，配置圖 2680 mm，怎麼辦？",
+      "version": "原創教學案例（2026-11）",
+      "kind": "使用者專案既有內容",
+      "url": "https://github.com/anita615715-cmd/bimflow-vibe-coding/blob/main/bim-atlas/data/articles.json",
+      "locator": "article.id=drawing-conflict",
+      "rawPath": "raw/S09.md"
+    }
+  ]
+}
