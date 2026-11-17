@@ -145,7 +145,7 @@
   function goto(index) {
     active = Math.max(0, Math.min(slides.length-1, index));
     renderSlide();
-    $("slide-stage").scrollTo({top:0,behavior:"instant"});
+    $("slide-stage").scrollTo({top:0,behavior:"auto"});
   }
 
   function readHash() {
@@ -198,7 +198,7 @@
       window.addEventListener("hashchange",readHash);
       document.addEventListener("keydown",e=>{
         if ($("overview-dialog").open || e.ctrlKey || e.altKey || e.metaKey) return;
-        if (["INPUT","TEXTAREA","BUTTON"].includes(document.activeElement?.tagName)) return;
+        if (["INPUT","TEXTAREA"].includes(document.activeElement?.tagName)) return;
         if(e.key==="ArrowRight" || e.key==="PageDown"){e.preventDefault();goto(active+1);}
         if(e.key==="ArrowLeft" || e.key==="PageUp"){e.preventDefault();goto(active-1);}
         if(e.key==="Home"){e.preventDefault();goto(0);}
