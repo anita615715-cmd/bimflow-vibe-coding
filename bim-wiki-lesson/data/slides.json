@@ -1,0 +1,302 @@
+{
+  "title": "從圖說到 BIM 模型｜設備建模前的五道檢查",
+  "subtitle": "LLM Wiki 來源教學 HTML 簡報",
+  "generated": "2026-11-17",
+  "slides": [
+    {
+      "id": "cover",
+      "style": "cover",
+      "chapter": "W01",
+      "kicker": "BIM ATLAS / FIELD GUIDE · 2026",
+      "title": "從圖說到 BIM 模型",
+      "subtitle": "設備建模前的 5 道檢查",
+      "lead": "適合第一次接觸 Revit 的學習者。從一台設備開始，學會辨識什麼可以建、什麼必須先確認。",
+      "bullets": [
+        "7 個 Wiki 章節",
+        "9 篇已 ingest 來源",
+        "5 道建模前置檢核"
+      ],
+      "sourceIds": [
+        "S01",
+        "S08"
+      ],
+      "tag": "LESSON 01"
+    },
+    {
+      "id": "goals",
+      "style": "learning",
+      "chapter": "W01",
+      "kicker": "01 / LEARNING OBJECTIVES",
+      "title": "上完這堂課，你可以做什麼？",
+      "subtitle": "先理解問題，才開始畫模型。",
+      "lead": "這堂課不教你記住所有 Revit 按鈕，而是教你在建模前做正確的判斷。",
+      "bullets": [
+        "分辨 BIM 族群與單純 3D 外形。",
+        "了解樣板、類別、參數與連接器的角色。",
+        "看懂碰撞檢查的限制，並能處理尺寸矛盾。"
+      ],
+      "sourceIds": [
+        "S01",
+        "S07",
+        "S09"
+      ],
+      "tag": "KNOW WHAT TO VERIFY"
+    },
+    {
+      "id": "family",
+      "style": "concept",
+      "chapter": "W01",
+      "kicker": "02 / CONCEPT",
+      "title": "3D 外型 ≠ 完整的 BIM 設備",
+      "subtitle": "族群承載的是幾何、參數與行為。",
+      "lead": "設備像不像，只是起點；能不能被正確分類、出表與連接，也是建模品質的一部分。",
+      "bullets": [
+        "幾何：外形與位置。",
+        "參數：型號、尺寸及其他可追溯資料。",
+        "行為：類別與 MEP 系統互動方式。"
+      ],
+      "sourceIds": [
+        "S01",
+        "S08"
+      ],
+      "tag": "FAMILY ≠ SHAPE"
+    },
+    {
+      "id": "template",
+      "style": "two-column",
+      "chapter": "W02",
+      "kicker": "03 / CHECKPOINT ONE",
+      "title": "第一道：選對樣板與類別",
+      "subtitle": "先決定這個元件要怎麼被使用。",
+      "lead": "不同樣板有不同的放置條件，MEP 類別又會影響可用參數。",
+      "bullets": [
+        "需要宿主的元件，先確認牆、樓板或天花板等依附條件。",
+        "要做 MEP 系統連接，確認適合的元件類別。",
+        "先在測試環境確認族群功能，再放入共用資料夾。"
+      ],
+      "sourceIds": [
+        "S02",
+        "S03",
+        "S05"
+      ],
+      "tag": "TEMPLATE + CATEGORY"
+    },
+    {
+      "id": "parameters",
+      "style": "compare",
+      "chapter": "W03",
+      "kicker": "04 / CHECKPOINT TWO",
+      "title": "第二道：類型參數與實體參數",
+      "subtitle": "同類型一起變，或每個實例個別變？",
+      "lead": "不是欄位越多越好，而是每個參數都應有明確的用途與資料來源。",
+      "bullets": [
+        "Type：同類型元件共用規格。",
+        "Instance：不同放置實例可個別設定。",
+        "先定義單位與來源，再建立欄位。"
+      ],
+      "sourceIds": [
+        "S04"
+      ],
+      "tag": "TYPE / INSTANCE"
+    },
+    {
+      "id": "connectors",
+      "style": "concept",
+      "chapter": "W04",
+      "kicker": "05 / CHECKPOINT THREE",
+      "title": "第三道：MEP 連接器不能猜",
+      "subtitle": "外框可先畫，接口不能亂指定。",
+      "lead": "連接器涉及管線、風管或電氣系統；缺少管口尺寸與方向時，要先列成待確認項。",
+      "bullets": [
+        "確認接口的尺寸、數量、位置和方向。",
+        "官方列出依面或工作平面放置的方式。",
+        "不知道接口位置，不能把猜測當正式模型。"
+      ],
+      "sourceIds": [
+        "S05",
+        "S06",
+        "S08"
+      ],
+      "tag": "CONNECTOR DATA REQUIRED"
+    },
+    {
+      "id": "interference",
+      "style": "concept",
+      "chapter": "W05",
+      "kicker": "06 / CHECKPOINT FOUR",
+      "title": "第四道：碰撞檢查不是萬能",
+      "subtitle": "找到交疊，不代表驗證了所有施工條件。",
+      "lead": "Revit 干涉檢查可以找出指定類別的部分幾何交疊，但模型精度和工具支援範圍都有限制。",
+      "bullets": [
+        "設定檢查範圍與要比對的類別。",
+        "對發現的交疊做成可追蹤紀錄。",
+        "簡化外框通過檢查，不等於細部配管與維修空間都合理。"
+      ],
+      "sourceIds": [
+        "S07",
+        "S08"
+      ],
+      "tag": "CHECK THE SCOPE"
+    },
+    {
+      "id": "case",
+      "style": "case",
+      "chapter": "W06",
+      "kicker": "07 / CHECKPOINT FIVE",
+      "title": "第五道：兩張圖的尺寸不同",
+      "subtitle": "先追資料來源，不要直接選比較大的。",
+      "lead": "模擬案例：同一台乾燥機，型錄寫 2630 mm，配置圖寫 2680 mm。",
+      "bullets": [
+        "確認兩份文件的發行日期與版次。",
+        "核對量測基準：本體？突出配件？配置包絡？",
+        "以「待確認」追蹤核定結果，勿將暫定值當最終值。"
+      ],
+      "sourceIds": [
+        "S09"
+      ],
+      "tag": "2630 mm ≠ 2680 mm"
+    },
+    {
+      "id": "decision",
+      "style": "quiz",
+      "chapter": "W06",
+      "kicker": "08 / APPLY YOUR KNOWLEDGE",
+      "title": "遇到尺寸衝突，你會先做哪件事？",
+      "subtitle": "試著做一次建模前置判斷。",
+      "lead": "只知道型錄 2630 mm、配置圖 2680 mm，而且不知道版本時，下一步應該？",
+      "bullets": [
+        "A｜直接採用較大的 2680 mm，當成正式模型。",
+        "B｜先核對圖面版本與量測基準，標記待確認。"
+      ],
+      "choices": [
+        {
+          "label": "A｜直接採用 2680 mm",
+          "correct": false,
+          "feedback": "這個決定沒有核定依據。較大值可以是明確標記的暫時配置方案，但不能直接當正式尺寸。"
+        },
+        {
+          "label": "B｜先核對來源與量測基準",
+          "correct": true,
+          "feedback": "方向正確。先確認版次、尺寸基準及權責單位，之後再更新模型並保留紀錄。"
+        }
+      ],
+      "sourceIds": [
+        "S09"
+      ],
+      "tag": "INTERACTIVE CHECK"
+    },
+    {
+      "id": "five-steps",
+      "style": "steps",
+      "chapter": "W07",
+      "kicker": "09 / SUMMARY",
+      "title": "把五道檢查串在一起",
+      "subtitle": "先核對，後建模；有衝突就回到來源。",
+      "lead": "設計一個可以實際重複執行的檢核路徑，而不是只看一張漂亮的 3D 圖。",
+      "bullets": [
+        "1｜確認建模用途、樣板與族群類別。",
+        "2｜核對尺寸來源、參數與單位。",
+        "3｜確認 MEP 接口及系統需求。",
+        "4｜執行範圍明確的協調與干涉檢查。",
+        "5｜處理圖說衝突並保留修訂紀錄。"
+      ],
+      "sourceIds": [
+        "S02",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S09"
+      ],
+      "tag": "REPEATABLE PRECHECK"
+    },
+    {
+      "id": "pipeline",
+      "style": "workflow",
+      "chapter": "W07",
+      "kicker": "10 / THE LLM WIKI GRAPH",
+      "title": "這份簡報是怎麼產生的？",
+      "subtitle": "來源 → Wiki → 審查 → 教學簡報。",
+      "lead": "9 篇資料先做來源筆記，再生成有來源標記的 Wiki 章節，最後產生這份 HTML 教學簡報。",
+      "bullets": [
+        "取得來源 → ingest raw 筆記。",
+        "AI 依來源編號整理 7 篇 Wiki 章節。",
+        "引用檢查不通過，返回 Wiki 修正；技術疑義返回原始資料。",
+        "驗收通過後才產生／公開 HTML。"
+      ],
+      "sourceIds": [
+        "S01",
+        "S04",
+        "S07"
+      ],
+      "tag": "LOOP + GRAPH"
+    },
+    {
+      "id": "reflection",
+      "style": "reflection",
+      "chapter": "W07",
+      "kicker": "11 / WORKFLOW REFLECTION",
+      "title": "為什麼要把檢查往前移？",
+      "subtitle": "把錯誤擋在簡報生成之前。",
+      "lead": "來源引用是最需要警惕的環節：有漂亮的來源標記，不代表真的能追溯到正確文件。",
+      "bullets": [
+        "在發布前檢查所有來源 ID 是否存在。",
+        "若 Wiki 引用不存在的來源，直接停止生成簡報。",
+        "來源版本不同時明確標註，例如連接器概念參考 Revit 2024。"
+      ],
+      "sourceIds": [
+        "S06",
+        "S07"
+      ],
+      "tag": "VALIDATE EARLY"
+    },
+    {
+      "id": "finish",
+      "style": "finish",
+      "chapter": "W07",
+      "kicker": "12 / TAKEAWAYS",
+      "title": "最重要的一句話",
+      "subtitle": "模型可信度，從資料來源開始。",
+      "lead": "設備圖說、參數、連接器與碰撞檢查彼此相連。知道什麼尚未確認，往往比快速畫完模型更重要。",
+      "bullets": [
+        "先問建模目的是什麼。",
+        "再問資料從哪裡來，是否已核定。",
+        "最後才決定模型可以做到哪一步。"
+      ],
+      "sourceIds": [
+        "S01",
+        "S04",
+        "S06",
+        "S07",
+        "S09"
+      ],
+      "tag": "FROM DRAWINGS TO DECISIONS"
+    },
+    {
+      "id": "references",
+      "style": "references",
+      "chapter": "W07",
+      "kicker": "13 / SOURCES",
+      "title": "你可以從哪裡繼續學？",
+      "subtitle": "來源可回查，Wiki 可延伸。",
+      "lead": "主要採用 Autodesk 官方文件，另搭配兩篇明確標示為模擬內容的 BIM Atlas 教學案例。",
+      "bullets": [
+        "完整來源、版本、使用限制都整理在 LLM Wiki。",
+        "教學簡報每頁都標示所參照的來源編號。",
+        "Wiki 頁面也能回查 raw 資料與原始文件。"
+      ],
+      "sourceIds": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09"
+      ],
+      "tag": "TRACEABLE KNOWLEDGE"
+    }
+  ]
+}
