@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BIM Atlas：BIM／Revit 建模、圖說查核與 MEP 檢核的可擴充知識網站。">
+  <title>BIM Atlas｜建模知識地圖</title>
+  <link rel="stylesheet" href="./assets/site.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">跳至主要內容</a>
+  <header class="topbar">
+    <div class="site-width nav">
+      <a class="brand" href="./" aria-label="BIM Atlas 首頁"><span class="brand-icon" aria-hidden="true">B<span>·</span></span><span><strong>BIM Atlas</strong><small>FIELD NOTES · KNOWLEDGE SYSTEM</small></span></a>
+      <nav aria-label="主選單" class="nav-links">
+        <a href="#library">探索筆記</a>
+        <a href="#workflow">如何延伸</a>
+        <a class="nav-outline" href="https://github.com/anita615715-cmd/bimflow-vibe-coding/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer">閱讀 AGENTS.md ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="site-width hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="signal"></span> BUILD ON RULES · VERSION 1.0</div>
+          <h1>把零散的工程疑問，<br><em>變成可延伸的知識。</em></h1>
+          <p class="hero-desc">BIM／Revit 設備建模的學習筆記。從圖說尺寸矛盾、管口資訊不足到 4D BIM 前置條件，用一致的結構整理每一次判斷。</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#library">開始探索 <span aria-hidden="true">↗</span></a><a class="text-link" href="#workflow">了解本站怎麼持續更新 <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-foot"><span><i class="pulse"></i> 開放閱讀</span><span>以規則驅動擴充</span><span>無需登入</span></div>
+        </div>
+        <div class="hero-visual" aria-label="尺寸矛盾檢核示意">
+          <div class="visual-label"><span class="visual-num">01 / 02</span> DRAWING DISCREPANCY</div>
+          <div class="technical-illustration" aria-hidden="true">
+            <div class="shape-back"></div><div class="shape-front"></div><div class="measure measure-top">L = ?</div><div class="measure measure-bottom">CHECK REVISION</div>
+            <div class="node node-a"></div><div class="node node-b"></div>
+          </div>
+          <div class="conflict-box"><span class="conflict-head">模擬案例：圖說差異</span><div class="conflict-numbers"><div><small>型錄</small><b>2630 <span>mm</span></b></div><span class="versus">≠</span><div><small>配置圖</small><b>2680 <span>mm</span></b></div></div><div class="conflict-footer"><span class="dot-orange"></span> 待查核：尺寸差 50 mm</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="intro-stats site-width" aria-label="知識庫摘要">
+      <div><span class="stat-value" id="article-total">—</span><span class="stat-label">篇主題筆記</span></div>
+      <div><span class="stat-value">06</span><span class="stat-label">個學習領域</span></div>
+      <div><span class="stat-value">01</span><span class="stat-label">套內容規範</span></div>
+      <p>每篇文章遵守固定欄位：<strong>情境、判斷原則、檢核清單、限制與來源</strong>。這讓內容能持續成長，而不只是一次性網頁。</p>
+    </section>
+    <section class="library site-width" id="library" aria-labelledby="library-heading">
+      <div class="section-top"><div><div class="section-kicker">01 / KNOWLEDGE LIBRARY</div><h2 id="library-heading">工程知識筆記<span class="title-mark">.</span></h2><p class="section-desc">從實務問題出發，把每個環節拆成能查閱、能驗證的檢核卡片。</p></div><span class="library-version">CURATED · 2026</span></div>
+      <div class="filter-panel">
+        <label class="search-field"><span class="search-symbol" aria-hidden="true">⌕</span><input type="search" id="search" placeholder="搜尋關鍵字，例如：管徑、尺寸、RFI…" aria-label="搜尋知識文章" autocomplete="off"><kbd>/</kbd></label>
+        <div id="categories" class="category-list" aria-label="主題分類"><button type="button" class="chip active" data-category="全部" aria-pressed="true">全部</button></div>
+      </div>
+      <div class="results-label"><span id="result-count">讀取文章中…</span><span class="sort-label">BIM ATLAS / ARTICLE INDEX</span></div>
+      <div id="cards" class="cards" aria-live="polite"><p class="loading">正在載入工程知識筆記…</p></div>
+    </section>
+    <section class="workflow" id="workflow" aria-labelledby="workflow-title"><div class="site-width workflow-grid"><div><div class="section-kicker light-kicker">02 / A REUSABLE SYSTEM</div><h2 id="workflow-title">一套規則，<br><em>持續生成新的內容。</em></h2><p>和一次性的 Vibe Coding 不同，本站把文章資料、版型和 AI 開發規則分開。要新增第七篇文章，不用複製新的網頁檔案。</p><a class="btn btn-ghost" href="https://github.com/anita615715-cmd/bimflow-vibe-coding/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer">檢視完整規範 ↗</a></div><div class="steps"><div class="step"><b>01</b><div><strong>閱讀 AGENTS.md</strong><span>確認資料結構、檔名、風格、品質與安全規則</span></div></div><div class="step"><b>02</b><div><strong>新增一筆 JSON 文章</strong><span>填入情境、重點、檢核清單與資料來源</span></div></div><div class="step"><b>03</b><div><strong>自動產生知識頁面</strong><span>首頁、搜尋、分類與文章詳情共用原有模板</span></div></div><div class="step"><b>04</b><div><strong>檢查並發布</strong><span>驗證內容與連結，再由 GitHub Pages 公開</span></div></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="site-width footer-row"><div><strong>BIM Atlas<span>.</span></strong><p>Engineering clarity, one note at a time.</p></div><div><span>示例資料僅供學習，不等於正式圖說或施工核定文件。</span><a href="https://github.com/anita615715-cmd/bimflow-vibe-coding" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></div></div></footer>
+</body>
+</html>
