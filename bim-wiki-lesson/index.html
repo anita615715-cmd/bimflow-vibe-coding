@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b222b">
+  <meta name="description" content="從圖說到 BIM 模型：以 LLM Wiki 為來源的設備建模前置檢核教學 HTML 簡報。">
+  <title>從圖說到 BIM 模型｜LLM Wiki 教學簡報</title>
+  <link rel="stylesheet" href="./assets/site.css">
+  <script defer src="./assets/slides.js"></script>
+</head>
+<body class="presentation-page">
+  <a class="skip-link" href="#slide-stage">跳到簡報內容</a>
+  <div id="top-progress" class="top-progress" aria-hidden="true"><span></span></div>
+  <div class="app-shell">
+    <header class="app-header">
+      <a class="brand" href="./" aria-label="教學簡報首頁"><span class="brand-mark">B<span>.</span></span><span class="brand-copy"><strong>BIM / WIKI</strong><small>LEARNING LAB · 2026</small></span></a>
+      <div class="header-actions">
+        <span class="header-kicker">WIKI-BASED TEACHING DECK</span>
+        <a class="header-link" href="./wiki.html">開啟 Wiki <span aria-hidden="true">↗</span></a>
+        <button class="icon-button" type="button" id="overview-open" aria-label="開啟投影片總覽" title="投影片總覽"><span class="grid-icon" aria-hidden="true">▦</span></button>
+        <button class="icon-button" type="button" id="fullscreen" aria-label="切換全螢幕" title="全螢幕（F）"><span aria-hidden="true">⛶</span></button>
+      </div>
+    </header>
+    <main class="main-panel">
+      <div class="meta-strip"><span id="slide-label">LOADING…</span><div><span class="online-dot"></span> 來源對照可查核</div></div>
+      <div id="slide-stage" class="slide-stage" aria-live="polite" aria-atomic="true"><div class="loading-card">正在開啟教學簡報…</div></div>
+      <div class="source-strip"><div class="source-strip-title">SOURCE LINKS</div><div class="source-chips" id="source-chips">—</div><a id="chapter-link" href="./wiki.html">閱讀對應 Wiki ↗</a></div>
+    </main>
+    <footer class="app-footer">
+      <div class="progress-detail"><span id="counter" class="slide-counter">01 / 14</span><span id="progress-title">教學簡報</span></div>
+      <div class="navigation-controls">
+        <button type="button" id="prev" class="nav-button" aria-label="上一張投影片">← <span>上一張</span></button>
+        <div id="dots" class="progress-dots" role="group" aria-label="切換投影片"></div>
+        <button type="button" id="next" class="nav-button next-button" aria-label="下一張投影片"><span>下一張</span> →</button>
+      </div>
+      <div class="hotkey-tip">← → 切換　/　F 全螢幕</div>
+    </footer>
+  </div>
+  <dialog id="overview-dialog" class="overview-dialog" aria-labelledby="overview-heading">
+    <div class="overview-head"><div><div class="section-overline">SLIDE INDEX</div><h2 id="overview-heading">簡報目錄</h2></div><button type="button" id="overview-close" class="icon-button" aria-label="關閉簡報目錄">✕</button></div>
+    <div id="overview-list" class="overview-list"></div>
+  </dialog>
+  <noscript><div class="noscript">這份互動簡報需要啟用 JavaScript；如無法使用，可直接開啟 <a href="./wiki.html">LLM Wiki</a> 或 GitHub 的 Markdown 章節。</div></noscript>
+</body>
+</html>
