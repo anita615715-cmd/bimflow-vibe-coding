@@ -99,3 +99,9 @@
 
 ## 10. 可重複使用的指令示例
 「請先閱讀 AGENTS.md，然後替 BIM Atlas 新增一篇〈管口尺寸確認〉。只修改 bim-atlas/data/articles.json；資料不足請標示待確認。完成後檢查 JSON 格式、文章 ID、首頁卡片和詳情頁，不要動到第五週 BIMFlow。」
+
+## 11. 新增自動驗證（第十一週重做改善）
+- 每次修改 `bim-atlas/data/articles.json` 後，除了 JSON 語法檢查，還要執行 `node bim-atlas/tools/validate.mjs`。
+- 此驗證檢查唯一文章 ID、kebab-case、分類、必要欄位、原則與清單的數量及引用連結格式。
+- 可執行 `node bim-atlas/tools/validate.mjs --selftest` 進行**刻意注入**重複 ID 與空白標題的負向測試；不得誤寫為實際開發自然發生的錯誤。
+- 任何驗證失敗都必須先修復資料、重新檢查，不能直接宣稱完成或發布。
