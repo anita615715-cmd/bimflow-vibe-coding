@@ -21,3 +21,11 @@
 案例採匿名教學模擬方式撰寫。內容不可當作原廠尺寸、核定施工圖或工程專業簽證。
 
 本專案使用 GitHub Pages；在本機預覽時請用 `python -m http.server 8000`，不要直接以 `file://` 開啟（瀏覽器可能禁止讀取 JSON）。
+
+## 第十一週重做的新增驗收
+新增 `tools/validate.mjs`，將 AGENTS.md 的文章欄位與命名要求變成可實際重跑的檢查。執行：
+```bash
+node bim-atlas/tools/validate.mjs
+node bim-atlas/tools/validate.mjs --selftest
+```
+本次檢查結果與補交紀錄詳見 [WEEK11_REDO_LOG.md](./WEEK11_REDO_LOG.md)。
